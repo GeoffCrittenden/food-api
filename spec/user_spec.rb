@@ -85,7 +85,7 @@ describe User do
                        last_name: 'Guy',
                        user_type: 'customer',
                        organization_id: 1,
-                       password: 'pass')
+                       password: 'password')
     User.count.should eql(users)
   end
 
