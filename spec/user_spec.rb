@@ -78,13 +78,14 @@ describe User do
     User.count.should eql(users)
   end
 
-  it "requires a password" do
+  it "requires a password confirmation" do
     users = User.count
     user = User.create(username: 'person@email.com',
                        first_name: 'This',
                        last_name: 'Guy',
                        user_type: 'customer',
-                       organization_id: 1)
+                       organization_id: 1,
+                       password: 'pass')
     User.count.should eql(users)
   end
 
