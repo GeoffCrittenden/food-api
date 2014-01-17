@@ -1,24 +1,21 @@
 require 'spec_helper'
 
 describe User do
-
-  before do
-    @user = User.create(username: 'person@email.com',
-                        first_name: 'This',
-                        last_name: 'Guy',
-                        user_type: 'customer',
-                        organization_id: 1,
-                        password: 'password',
-                        password_confirmation: 'password')
-  end
-
   it "should open a new User" do
     user = User.new
     user.should be_a(User)
   end
 
   it "should create a new User" do
-    @user.should be_a(User)
+    users = User.count
+    user = User.create(username: 'person@email.com',
+                       first_name: 'This',
+                       last_name: 'Guy',
+                       user_type: 'customer',
+                       organization_id: 1,
+                       password: 'password',
+                       password_confirmation: 'password')
+    User.count.should eql(users + 1)
   end
 
   it "requires a username" do
@@ -100,5 +97,4 @@ describe User do
                        password: 'password')
     User.count.should eql(users)
   end
-
 end
