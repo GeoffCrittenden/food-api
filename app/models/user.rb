@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
     message: "%{value} is not a valid user type" }
   validates :organization_id, presence: true
   validates :password_digest, presence: true
+  validates :password_digest, length: { minimum: 8 }
   validates :password_confirmation, presence: true
 
   def password

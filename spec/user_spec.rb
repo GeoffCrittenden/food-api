@@ -67,4 +67,25 @@ describe User do
     User.count.should eql(users)
   end
 
+  it "requires an organization id" do
+    users = User.count
+    user = User.create(username: 'person@email.com',
+                       first_name: 'This',
+                       last_name: 'Guy',
+                       user_type: 'customer',
+                       password: 'password',
+                       password_confirmation: 'password')
+    User.count.should eql(users)
+  end
+
+  it "requires a password" do
+    users = User.count
+    user = User.create(username: 'person@email.com',
+                       first_name: 'This',
+                       last_name: 'Guy',
+                       user_type: 'customer',
+                       organization_id: 1)
+    User.count.should eql(users)
+  end
+
 end
