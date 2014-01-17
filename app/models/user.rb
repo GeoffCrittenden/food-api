@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :username, presence: true
   validates_format_of :username, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates :user_type, presence: true
-  validates :user_type, inclusion: { in: %w(customer admin app_admin),
+  validates :user_type, inclusion: { in: %w(customer restaurant_admin app_admin),
     message: "%{value} is not a valid user type" }
   validates :organization_id, presence: true
   validates :password_digest, presence: true
