@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   validates :username, presence: true
+  validates_format_of :username, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create, :update
   validates :user_type, presence: true
   validates :organization_id, presence: true
   validates :password_digest, presence: true
