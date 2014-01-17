@@ -78,6 +78,18 @@ describe User do
     User.count.should eql(users)
   end
 
+  it "requires a password length of at least 8 characters" do
+    users = User.count
+    user = User.create(username: 'person@email.com',
+                       first_name: 'This',
+                       last_name: 'Guy',
+                       user_type: 'customer',
+                       organization_id: 1,
+                       password: 'passwor',
+                       password_confirmation: 'passwor')
+    User.count.should eql(users)
+  end
+
   it "requires a password confirmation" do
     users = User.count
     user = User.create(username: 'person@email.com',
