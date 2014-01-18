@@ -20,11 +20,15 @@ describe Organization do
   end
 
   it "requires an organization type" do
-    pending
+    orgs = Organization.count
+    Organization.create(name: 'Company B')
+    Organization.count.should eql(orgs)
   end
 
   it "requires the organization type to be restaurant, customer, or application" do
-    pending
+    orgs = Organization.count
+    Organization.create(name: 'Goodburger', org_type: 'restarant')
+    Organization.count.should eql(orgs)
   end
 
 end
