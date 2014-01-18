@@ -27,6 +27,11 @@ ActiveRecord::Schema.define(version: 20140117145427) do
   end
 
   create_table "organizations", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "org_type"
+    t.integer  "admin_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

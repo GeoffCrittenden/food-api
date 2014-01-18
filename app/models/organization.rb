@@ -5,6 +5,5 @@ class Organization < ActiveRecord::Base
 
   validates :name, presence: true
   validates :org_type, presence: true, inclusion: { in: %w(restaurant customer application) }
-  validates :admin_id, presence: true
 
 end
