@@ -7,6 +7,9 @@ class Application < ActiveRecord::Base
 
   after_initialize :create_auth_token
 
+  validates :name, presence: true
+  validates :admin_id, presence: true
+
   private
 
   def create_auth_token
