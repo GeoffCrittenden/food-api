@@ -17,11 +17,17 @@ ActiveRecord::Schema.define(version: 20140117145427) do
   enable_extension "plpgsql"
 
   create_table "applications", force: true do |t|
+    t.string   "name"
+    t.integer  "admin_id"
+    t.string   "auth_token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "items", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "restaurant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -32,11 +38,6 @@ ActiveRecord::Schema.define(version: 20140117145427) do
     t.string   "phone"
     t.string   "org_type"
     t.integer  "admin_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "restaurants", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
