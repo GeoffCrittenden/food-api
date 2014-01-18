@@ -10,11 +10,7 @@ class Application < ActiveRecord::Base
   private
 
   def create_auth_token
-    if self.auth_token == nil
-      self.update_attributes(auth_token: Base64.encode64(self.name + User.find(self.admin_id).username).chop!)
-    else
-      puts 'This application already has an auth_token.'
-    end
+    self.update_attributes(auth_token: Base64.encode64(self.name + User.find(self.admin_id).username).chop!)
   end
 
 end
