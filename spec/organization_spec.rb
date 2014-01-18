@@ -25,7 +25,7 @@ describe Organization do
     Organization.count.should eql(orgs)
   end
 
-  it "requires the organization type to be restaurant, customer, or application" do
+  it "requires the organization type to be restaurant or customer" do
     orgs = Organization.count
     Organization.create(name: 'Goodburger', org_type: 'restarant')
     Organization.count.should eql(orgs)
