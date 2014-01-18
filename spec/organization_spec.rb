@@ -8,11 +8,15 @@ describe Organization do
   end
 
   it "should create a new Organization" do
-    pending
+    orgs = Organization.count
+    org = Organization.create(name: 'Company A', org_type: 'customer')
+    Organization.count.should eql(orgs + 1)
   end
 
   it "requires an organization name" do
-    pending
+    orgs = Organization.count
+    Organization.create(org_type: 'customer')
+    Organization.count.should eql(orgs)
   end
 
   it "requires an organization type" do
