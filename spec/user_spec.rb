@@ -108,6 +108,18 @@ describe User do
                        organization_id: 1,
                        password: 'password',
                        password_confirmation: 'password')
-    user.restaurants.should be_a(Hash)
+    user.restaurant_info.should be_a(Hash)
   end
+
+  it "outputs a hash of items User has ordered" do
+    user = User.create(username: 'person7@email.com',
+                       first_name: 'This',
+                       last_name: 'Guy',
+                       user_type: 'customer',
+                       organization_id: 1,
+                       password: 'password',
+                       password_confirmation: 'password')
+    user.item_info.should be_a(Hash)
+  end
+
 end

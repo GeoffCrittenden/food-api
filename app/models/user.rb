@@ -17,13 +17,13 @@ class User < ActiveRecord::Base
   # validates :password, presence: true, length: { minimum: 8, maximum: 20 }, on: :create
   # validates :password_confirmation, presence: true, on: :create
 
-  def restaurants
+  def restaurant_info
     output = { restaurants: [] }
     self.orders.each { |order| output[:restaurants] << order.restaurant.name }
     output
   end
 
-  def items
+  def item_info
     output = { items: [] }
     self.orders.each { |order|
       order.items.each { |item|
