@@ -17,6 +17,13 @@ class User < ActiveRecord::Base
   # validates :password, presence: true, length: { minimum: 8, maximum: 20 }, on: :create
   # validates :password_confirmation, presence: true, on: :create
 
+  def restaurants
+    output = { restaurants: [] }
+    self.orders.each do |order|
+      output[:restaurants] << order.restaurant.name
+    end
+  end
+
   def password
     @password ||= Password.new(password_digest)
   end
