@@ -1,3 +1,5 @@
-<%= User.first.restaurant_info.to_json %>
-
-<%= User.first.item_info.to_json %>
+<% if @output %>
+  <%= @output %>
+<% elsif @message %>
+  <%= @message %>
+<% end %>

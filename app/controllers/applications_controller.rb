@@ -1,14 +1,21 @@
 class ApplicationsController < ApplicationController
 
   def auth
-    if params[:request_type] && params[:password] && params[:username] && params[:token]
-      if app_check? && user_exists? && user_auth?
+    if params[:request_type] && params[:username] && params[:token]
+      if app_check? && user_exists?
+        user = User.find_by(username: params[:username])
         if params[:request_type] == 'restaurants_json'
-          user = User.find_by(username: params[:username])
-          @output = user.restaurants_info.to_json
+          @output = user.restaurant_info.to_json
         elsif params[:request_type] == 'restaurants_xml'
-          render index
+          @output = user.restaurant_info.to_xml
+        elsif params[:request_type] == 'items_json'
+          @output = user.item_info.to_json
+        elsif params[:request_type] == 'items_xml'
+          @output = user.item_info.to_xml
+        else
+          @output = 'That request type is not valid.'
         end
+        render 'index'
       end
     elsif params[:password] && params[:username] && params[:token]
       if app_check? && user_exists? && user_auth?
