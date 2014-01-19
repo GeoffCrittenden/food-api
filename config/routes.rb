@@ -3,10 +3,10 @@ FoodApi::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'applications#index'
+  root 'applications#auth'
 
-  get '/:token/:username' => 'applications#user_check'
-  get '/:token' => 'applications#auth'
+  # get '/:token/:username' => 'applications#user_check'
+  # get '/{:params}' => 'applications#auth'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
