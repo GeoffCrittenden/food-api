@@ -19,9 +19,17 @@ class User < ActiveRecord::Base
 
   def restaurants
     output = { restaurants: [] }
-    self.orders.each do |order|
-      output[:restaurants] << order.restaurant.name
-    end
+    self.orders.each { |order| output[:restaurants] << order.restaurant.name }
+    output
+  end
+
+  def items
+    output = { items: [] }
+    self.orders.each { |order|
+      order.items.each { |item|
+        output[:items] << { name: item.name, description: item.description, restaurant: item.restaurant.name }
+      }
+    }
     output
   end
 
