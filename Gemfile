@@ -39,6 +39,8 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+gem 'nokogiri'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
