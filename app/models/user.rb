@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
     self.orders.each do |order|
       output[:restaurants] << order.restaurant.name
     end
+    output
   end
 
   def password

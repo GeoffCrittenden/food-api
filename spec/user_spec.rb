@@ -99,4 +99,15 @@ describe User do
                        password: 'password')
     User.count.should eql(users)
   end
+
+  it "outputs a hash of restaurants User ordered from" do
+    user = User.create(username: 'person6@email.com',
+                       first_name: 'This',
+                       last_name: 'Guy',
+                       user_type: 'customer',
+                       organization_id: 1,
+                       password: 'password',
+                       password_confirmation: 'password')
+    user.restaurants.should be_a(Hash)
+  end
 end

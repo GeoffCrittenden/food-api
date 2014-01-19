@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe  Item do
+describe Item do
   before (:each) do
     @items = Item.count
     @item = { name: 'Chicken Burrito',
