@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
   include BCrypt
 
   has_secure_password
+  has_many   :orders
+  has_many   :items, through: :orders
+  belongs_to :organization
+  has_many   :applications
 
   validates :username, presence: true,
                        format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
@@ -21,8 +25,5 @@ class User < ActiveRecord::Base
     @password = Password.create(new_password)
     self.password_digest = @password
   end
-
-  has_many :items
-  has_many :applications
 
 end

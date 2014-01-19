@@ -24,3 +24,16 @@ items = Item.create([ { name: 'Chicken Burrito', description: 'Our famous burrit
                       { name: 'BLTB', description: 'Bacon. Lettuce. Tomato. Bacon.', restaurant_id: 3 } ])
 
 app = Application.create(name: 'FoodApp', admin_id: 4)
+
+Organization.find(2).update_attributes(admin_id: 2)
+Organization.find(3).update_attributes(admin_id: 3)
+Organization.find(4).update_attributes(admin_id: 4)
+
+orders = Order.create([ { user_id: 1, restaurant_id: 2 },
+                        { user_id: 1, restaurant_id: 2 },
+                        { user_id: 1, restaurant_id: 3 } ])
+
+Order.find(1).items = [Item.find(1)]
+Order.find(2).items = [Item.find(2),Item.find(3)]
+Order.find(3).items = [Item.find(4)]
+
