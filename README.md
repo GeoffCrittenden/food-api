@@ -65,12 +65,15 @@
 ######2) Testing:
   
   There are only about 30 rspec examples written at this time, and these are only on the models.  There is no integration testing yet with the controller.
+
+######3) Security:
+  There has been little to no regard paid to security, because this is the first such app of this type that I have ever created, and I am still learning about security best practices.
   
-######3) Refactoring:
+######4) Refactoring:
   
   The application is currently in an MVP (Minimum Viable Product) state.  Much of the codebase needs to be rewritten to clean up repetitive code and for appearance.
   
-######4) Output Formatting:
+######5) Output Formatting:
 
   This applcation is designed to output either JSON or XML data.  When outputting to either a web browser or to a command shell, it is not very pretty.  A way to present it in a more appealing manner that does not break the integrity of the data needs to be figured out.
   
