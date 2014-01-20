@@ -1,6 +1,19 @@
 require 'spec_helper'
 
 describe User do
+  before do
+    @user = { username: 'person@email.com',
+              first_name: 'John',
+              last_name: 'Doe',
+              user_type: 'customer',
+              organization_id: 1,
+              password: 'password',
+              password_confirmation: 'password' }
+  end
+
+  before(:each) do
+    @users = User.count
+  end
 
   it "should open a new User" do
     user = User.new
