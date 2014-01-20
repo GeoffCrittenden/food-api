@@ -32,9 +32,9 @@
   
 ####To Run:
 
-  ``rails server`` or ``rails s``
+  ``$ rails server`` or ``$ rails s``
   
-  and then navigate to ``http://localhost:3000`` in the browser or ``$ curl "http://localhost:3000"`` for further documentation.
+  and then navigate to ``http://localhost:3000`` in the browser or ``$ curl "http://localhost:3000"`` for further documentation and to see sample code.
   
 ===
 
@@ -43,6 +43,8 @@
   ``$ rake db:create`` and ``$ rake db:migrate`` will set up the realtional tables.
 
   ``$ rake db:seed`` will seed the development database with a few samples.
+  
+  You can also run `$ rails console` or `$ rails c` to launch the console which will allow for further throubleshooting, if needed.
 
 ####Running the Test Suite:
 
