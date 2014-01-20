@@ -1,7 +1,8 @@
 food-api
 ========
 
-API for retrieving user food info
+an API for retrieving user food info
+========
 
 Things you may want to cover:
 
