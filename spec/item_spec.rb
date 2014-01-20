@@ -14,9 +14,7 @@ describe Item do
   end
 
   it "creates a new Item" do
-    Item.create(name: 'Twinkie',
-                description: 'Yellow sponge cake pastry snack filled with creme.',
-                restaurant_id: 1)
+    Item.create(@item)
     Item.count.should eql(@items + 1)
   end
 

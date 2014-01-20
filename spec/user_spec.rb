@@ -21,15 +21,8 @@ describe User do
   end
 
   it "should create a new User" do
-    users = User.count
-    user = User.create(username: 'person@email.com',
-                       first_name: 'This',
-                       last_name: 'Guy',
-                       user_type: 'customer',
-                       organization_id: 1,
-                       password: 'password',
-                       password_confirmation: 'password')
-    User.count.should eql(users + 1)
+    user = User.create(@user)
+    User.count.should eql(@users + 1)
   end
 
   it "requires a username" do
