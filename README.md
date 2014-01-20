@@ -81,7 +81,7 @@
 
 ##Contact
 
-If you have any comments or suggestions, please feel free to contact me at [geoffcritt at gmail.com](mailto:geoffcritt@gmail.com) or on Twitter at [@GeoffCrittenden](http://twitter.com/GeoffCrittenden).
+If you have any comments or suggestions, please feel free to contact me at [geoffcritt at gmail.com](mailto:geoffcritt at gmail.com) or on Twitter at [@GeoffCrittenden](http://twitter.com/GeoffCrittenden).
 
 Let me know if you discover more issues, as I know there are more to be found.  Submit all pull requests through GitHub.
 
