@@ -1,7 +1,7 @@
 class ApplicationsController < ApplicationController
 
   def index
-    render 'index'
+    redirect_to :root
   end
 
   def auth

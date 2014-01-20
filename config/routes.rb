@@ -5,6 +5,8 @@ FoodApi::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'applications#auth'
 
+  get '/:wildcard' => 'applications#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
