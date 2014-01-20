@@ -48,9 +48,7 @@ class ApplicationsController < ApplicationController
 
   def app_check?
     app = Application.find_by(auth_token: params[:token])
-    if app
-      return true
-    end
+    return true if app
     false
   end
 
@@ -61,9 +59,7 @@ class ApplicationsController < ApplicationController
 
   def user_exists?
     user = User.find_by(username: params[:username])
-    if user
-      return true
-    end
+    return true if user
     false
   end
 
