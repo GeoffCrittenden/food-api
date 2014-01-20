@@ -2,11 +2,9 @@ food-api
 ========
 
 an API for retrieving user food info
-========
 
-Things you may want to cover:
 
-* Ruby version
+* Built on Ruby v2.0.0 & Rails v4.0.2
 
 * System dependencies
 
