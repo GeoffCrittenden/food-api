@@ -1,4 +1,4 @@
-#food-api
+##food-api
 
 #####an API for retrieving user food info
 #####*Built on Ruby v2.0.0 & Rails v4.0.2*
