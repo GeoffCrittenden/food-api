@@ -6,7 +6,10 @@ an API for retrieving user food info
 
 * Built on Ruby v2.0.0 & Rails v4.0.2
 
-* System dependencies
+* System dependencies:
+  BCrypt-Ruby for secure passwords
+  JSON for JSON output formatting
+  Nokogiri for XML output formatting
 
 * Configuration
 
