@@ -1,13 +1,12 @@
 food-api
 ========
 
-an API for retrieving user food info
+#####an API for retrieving user food info
+#####*Built on Ruby v2.0.0 & Rails v4.0.2*
 
 ===
 
-*Built on Ruby v2.0.0 & Rails v4.0.2*
-
-**System dependencies:**
+####System dependencies:
 
   PostgreSQL for ActiveRecord Database
 
@@ -18,11 +17,13 @@ an API for retrieving user food info
   Nokogiri for XML output formatting
   
 ===
-**To Install:**
+####To Install:
 
   ``$ git clone https://github.com/GeoffCrittenden/food-api``
   
-  ``$ gem install pg`` if needed
+  ``$ gem install pg`` if needed 
+  
+  If further PostgreSQL setup is necessary, please go to http://www.postgresql.org for help.
   
   ``$ gem install bcrypt-ruby`` if needed
   
@@ -30,7 +31,7 @@ an API for retrieving user food info
   
   ``$ bundle install``
   
-**To Run:**
+####To Run:
 
   ``rails server`` or ``rails s``
   
@@ -38,13 +39,13 @@ an API for retrieving user food info
   
 ===
 
-**Database Setup:**
+####Database Setup:
 
   ``$ rake db:create`` and ``$ rake db:migrate`` will set up the realtional tables.
 
   ``$ rake db:seed`` will seed the development database with a few samples.
 
-**Running the Test Suite:**
+####Running the Test Suite:
 
   Make sure to run ``$ bin/rake db:migrate RAILS_ENV=test`` first to set up the test environment database.
   
@@ -52,8 +53,5 @@ an API for retrieving user food info
   
   Then run ``$ bundle exec rspec`` or ``$ bundle exec rspec -f d -c`` if you did not set up a .rspec file.
 
-* Services (job queues, cache servers, search engines, etc.)
+===
 
-* Deployment instructions
-
-* ...
