@@ -5,7 +5,7 @@
 <% else %>
   <h2>Welcome to the Foods API</h2>
   <p>The Foods API is a simple interface for 3rd party apps to access their users' info.</p>
-  <p>To access the API, clients need only to enter a URL in a web browser or perform<br> a cURL request.  A 3rd party application must always supply the Foods API<br> authorization token (auth_token) with every request.</p>
+  <p>To access the API, clients need only to enter a URL in a web browser or perform a cURL request.  A 3rd party application must always supply the Foods API authorization token (auth_token) with every request.</p>
   <h3>The format of the request can be any of the following:</h3>
   <p>To validate a 3rd party authorization token (auth_token):<br>
     http://localhost:3000/?token=<i>auth_token</i></p>
@@ -19,7 +19,7 @@
     http://localhost:3000/?token=<i>auth_token</i>&username=<i>username</i>&password=<i>password</i></p>
   <p>Via curl:<br>
     <code>curl "http://localhost:3000/?token=<i>auth_token</i>&username=<i>username</i>&password=<i>password</i>"</code></p>
-  <p>In order to access a user's restaurant and food item info, a request type (restaurants_json,<br> restaurants_xml, items_json, or items_xml) needs to be added to the end of the request<br> string:<br>
+  <p>In order to access a user's restaurant and food item info, a request type (restaurants_json, restaurants_xml, items_json, or items_xml) needs to be added to the end of the request string:<br>
     http://localhost:3000/?token=<i>auth_token</i>&username=<i>username</i>&password=<i>password</i>&request_type=<i>request_type</i></p>
   <p>Via curl:<br>
     <code>curl "http://localhost:3000/?token=<i>auth_token</i>&username=<i>username</i>&password=<i>password</i>&request_type=<i>request_type</i>"</code></p>
