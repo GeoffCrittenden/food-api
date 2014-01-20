@@ -1,8 +1,12 @@
 class ApplicationsController < ApplicationController
 
+  def index
+    render 'index'
+  end
+
   def auth
-    if params[:request_type] && params[:username] && params[:token]
-      if app_check? && user_exists?
+    if params[:request_type] && params[:password] && params[:username] && params[:token]
+      if app_check? && user_exists? && user_auth?
         user = User.find_by(username: params[:username])
         if params[:request_type] == 'restaurants_json'
           @output = user.restaurant_info.to_json
@@ -13,31 +17,33 @@ class ApplicationsController < ApplicationController
         elsif params[:request_type] == 'items_xml'
           @output = user.item_info.to_xml
         else
-          @output = 'That request type is not valid.'
+          @message = 'That request type is not valid.'
         end
-        render 'index'
+      else
+        @message = 'Check info. Either token or username invalid.'
       end
     elsif params[:password] && params[:username] && params[:token]
       if app_check? && user_exists? && user_auth?
-        render 'user-auth-good'
+        @message = 'User authentication successful.'
       else
-        render 'user-auth-fail'
+        @message = 'User authentication failed.'
       end
     elsif params[:username] && params[:token]
       if app_check? && user_exists?
-        render 'valid-user'
+        @message = "#{params[:username]} is a valid user."
       else
-        render 'invalid-user'
+        @message = "#{params[:username]} is not a valid user."
       end
     elsif params[:token]
       if app_check?
-        render 'valid-app'
+        @message = 'Your auth_token is valid.'
       else
-        render 'invalid-app'
+        @message = 'Your auth_token is invalid.'
       end
     else
-      render index
+      @message = nil
     end
+    render 'index'
   end
 
   def app_check?
