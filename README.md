@@ -5,24 +5,30 @@ an API for retrieving user food info
 
 ===
 
+*Built on Ruby v2.0.0 & Rails v4.0.2*
 
-* Built on Ruby v2.0.0 & Rails v4.0.2
+**System dependencies:**
 
-* System dependencies:
+BCrypt-Ruby for secure passwords
 
-  BCrypt-Ruby for secure passwords
-
-  JSON for JSON output formatting
+JSON for JSON output formatting
   
-  Nokogiri for XML output formatting
+Nokogiri for XML output formatting
   
 ===
+**To Install:**
 
-* To Install:
-
-  Clone into: https://github.com/GeoffCrittenden/food-api
+  ``git clone https://github.com/GeoffCrittenden/food-api``
   
-* To Run:
+  ``gem install bcrypt-ruby`` if needed
+  
+  ``gem install nokogiri`` if needed
+  
+  ``bundle install``
+  
+**To Run:**
+
+  ``rails server`` or ``rails s``
 
 * Database creation
 
