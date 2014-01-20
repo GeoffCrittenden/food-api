@@ -4,4 +4,27 @@
   <%= @message %>
 <% else %>
   <h2>Welcome to the Foods API</h2>
+  <p>The Foods API is a simple interface for 3rd party apps to access their users' info.</p>
+  <p>To access the API, clients need only to enter a URL in a web browser or perform<br> a cURL request.  A 3rd party application must always supply the Foods API<br> authorization token (auth_token) with every request.</p>
+  <h3>The format of the request can be any of the following:</h3>
+  <p>To validate a 3rd party authorization token (auth_token):<br>
+    http://localhost:3000/?token=<i>auth_token</i></p>
+  <p>Or, to validate an auth_token via curl:<br>
+    <code>curl "http://localhost:3000/?token=<i>auth_token</i>"</code></p>
+  <p>To validate a user in the Foods API database:<br>
+    http://localhost:3000/?token=<i>auth_token</i>&username=<i>username</i></p>
+  <p>Via curl:<br>
+    <code>curl "http://localhost:3000/?token=<i>auth_token</i>&username=<i>username</i>"</code></p>
+  <p>To authenticate a user's credentials:<br>
+    http://localhost:3000/?token=<i>auth_token</i>&username=<i>username</i>&password=<i>password</i></p>
+  <p>Via curl:<br>
+    <code>curl "http://localhost:3000/?token=<i>auth_token</i>&username=<i>username</i>&password=<i>password</i>"</code></p>
+  <p>In order to access a user's restaurant and food item info, a request type (restaurants_json,<br> restaurants_xml, items_json, or items_xml) needs to be added to the end of the request<br> string:<br>
+    http://localhost:3000/?token=<i>auth_token</i>&username=<i>username</i>&password=<i>password</i>&request_type=<i>request_type</i></p>
+  <p>Via curl:<br>
+    <code>curl "http://localhost:3000/?token=<i>auth_token</i>&username=<i>username</i>&password=<i>password</i>&request_type=<i>request_type</i>"</code></p>
+  <h3>Example:</h3>
+  <p>http://localhost:3000/?token=dGhpc2lzdGhldG9rZW4&username=john.doe@email.com&password=p@s5wOrd&request_type=items_json</p>
+  <p>Will yield results such as </p>
+  <p><code>{"items":[{"name":"Tres Tacos","description":"Three soft shell tacos filled with your choice of ingredients.","restaurant":"Burrito Place Restaurant"},{"name":"Turkey Sub","description":"Freshly sliced turkey piled on a warm roll, topped with provolone, lettuce and tomato","restaurant":"Sandwich Hut"},{"name":"Chicken Burrito","description":"Our famous burrito filled with grilled chicken.","restaurant":"Burrito Place Restaurant"},{"name":"Carne Asada Burrito","description":"Our house specialty. Grilled steak, rice beans, and guacamole.","restaurant":"Burrito Place Restaurant"}]}</code></p>
 <% end %>
