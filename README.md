@@ -75,7 +75,7 @@
   
 ######5) Output Formatting:
 
-  This applcation is designed to output either JSON or XML data.  When outputting to either a web browser or to a command shell, it is not very pretty.  A way to present it in a more appealing manner that does not break the integrity of the data needs to be figured out.
+  This applcation is designed to output either JSON or XML data.  When outputting to either a web browser or to a command shell, it is not very pretty.  A way to present it in a more appealing manner that does not break the integrity of the data needs to be figured out.  ***UPDATE 01/20/14***: I think I figured this one out.  I discovered `render :json` and used it in a few lines of conditional code at the end of my primary controller method to either output JSON or XML data if requested, or to render `index.html.erb` if no data is requested.
   
 ===
 
