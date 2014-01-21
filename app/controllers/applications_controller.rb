@@ -43,7 +43,11 @@ class ApplicationsController < ApplicationController
     else
       @message = nil
     end
-    render 'index'
+    if @output
+      render :json => @output
+    else
+      render 'index'
+    end
   end
 
   def app_check?
