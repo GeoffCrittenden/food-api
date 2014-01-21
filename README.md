@@ -44,7 +44,7 @@
 
   ``$ rake db:seed`` will seed the development database with a few samples.
   
-  You can also run `$ rails console` or `$ rails c` to launch the console which will allow for further throubleshooting, if needed.
+  You can also run `$ rails console` or `$ rails c` to launch the console which will allow for creation of objects and further throubleshooting, if needed.
 
 ####Running the Test Suite:
 
